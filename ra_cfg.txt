@@ -54,7 +54,7 @@ FSP Configuration
     
   RA Common
     Main stack size (bytes): 0x400
-    Heap size (bytes): 0
+    Heap size (bytes): 0x200
     MCU Vcc (mV): 3300
     Parameter checking: Disabled
     Assert Failures: Return FSP_ERR_ASSERTION
@@ -279,7 +279,7 @@ FSP Configuration
       Extra: RS-485: DE Pin Polarity: Active High
       Extra: RS-485: DE Port Number: Disabled
       Extra: RS-485: DE Pin Number: Disabled
-      Interrupts: Callback: NULL
+      Interrupts: Callback: my_uart_irq
       Interrupts: Receive Interrupt Priority: Priority 12
       Interrupts: Transmit Data Empty Interrupt Priority: Priority 12
       Interrupts: Transmit End Interrupt Priority: Priority 12

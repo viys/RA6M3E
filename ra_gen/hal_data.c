@@ -31,7 +31,7 @@ const sci_uart_extended_cfg_t g_uart9_cfg_extend =
 /** UART interface configuration */
 const uart_cfg_t g_uart9_cfg =
 { .channel = 9, .data_bits = UART_DATA_BITS_8, .parity = UART_PARITY_OFF, .stop_bits = UART_STOP_BITS_1, .p_callback =
-          NULL,
+          my_uart_irq,
   .p_context = NULL, .p_extend = &g_uart9_cfg_extend,
 #define RA_NOT_DEFINED (1)
 #if (RA_NOT_DEFINED == RA_NOT_DEFINED)

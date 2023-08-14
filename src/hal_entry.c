@@ -1,4 +1,22 @@
 #include "hal_data.h"
+#include "stdio.h"
+
+volatile bool uart9BusyFlag = 0;
+
+int _write(int fd, char *pBuffer, int size)
+{
+    uart9BusyFlag = 1;
+    R_SCI_UART_Write(&g_uart9_ctrl, pBuffer, size);
+    while(uart9BusyFlag);
+    return size;
+}
+
+void my_uart_irq(uart_callback_args_t *p_args)
+{
+    if(p_args->event == UART_EVENT_TX_COMPLETE){
+        uart9BusyFlag = 0;
+    }
+}
 
 FSP_CPP_HEADER
 void R_BSP_WarmStart(bsp_warm_start_event_t event);
@@ -12,6 +30,7 @@ void hal_entry(void)
 {
     /* TODO: add your own code here */
     uint8_t c = 't';
+    uint8_t a = 0;
 
     R_SCI_UART_Open(&g_uart9_ctrl, &g_uart9_cfg);
 
@@ -31,7 +50,8 @@ void hal_entry(void)
         R_BSP_PinAccessDisable();
         R_BSP_SoftwareDelay(500, BSP_DELAY_UNITS_MILLISECONDS);
 
-        R_SCI_UART_Write(&g_uart9_ctrl, &c, 1);
+//        R_SCI_UART_Write(&g_uart9_ctrl, &c, 1);
+        printf("%d\n",a++);
 
     }
 
