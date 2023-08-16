@@ -56,6 +56,27 @@
       <configSetting altId="cgc0.xtal.p213" configurationId="cgc0.xtal" isUsedByDriver="true"/>
       <configSetting altId="debug0.swclk.p300" configurationId="debug0.swclk" isUsedByDriver="true"/>
       <configSetting altId="debug0.swdio.p108" configurationId="debug0.swdio" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_clk.p101" configurationId="glcdc0.lcd_clk" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data00.p106" configurationId="glcdc0.lcd_data00" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data01.p107" configurationId="glcdc0.lcd_data01" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data02.p600" configurationId="glcdc0.lcd_data02" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data03.p601" configurationId="glcdc0.lcd_data03" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data04.p602" configurationId="glcdc0.lcd_data04" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data05.p610" configurationId="glcdc0.lcd_data05" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data06.p609" configurationId="glcdc0.lcd_data06" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data07.p608" configurationId="glcdc0.lcd_data07" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data08.p115" configurationId="glcdc0.lcd_data08" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data09.p114" configurationId="glcdc0.lcd_data09" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data10.p113" configurationId="glcdc0.lcd_data10" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data11.p112" configurationId="glcdc0.lcd_data11" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data12.p111" configurationId="glcdc0.lcd_data12" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data13.p301" configurationId="glcdc0.lcd_data13" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data14.p302" configurationId="glcdc0.lcd_data14" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_data15.p303" configurationId="glcdc0.lcd_data15" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_tcon0.p102" configurationId="glcdc0.lcd_tcon0" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_tcon1.p103" configurationId="glcdc0.lcd_tcon1" isUsedByDriver="true"/>
+      <configSetting altId="glcdc0.lcd_tcon2.p104" configurationId="glcdc0.lcd_tcon2" isUsedByDriver="true"/>
+      <configSetting altId="gpt5.gtiocb.p100" configurationId="gpt5.gtiocb" isUsedByDriver="true"/>
       <configSetting altId="p209.output.low" configurationId="p209"/>
       <configSetting altId="p210.output.low" configurationId="p210"/>
       <configSetting altId="sci9.rxd.p110" configurationId="sci9.rxd" isUsedByDriver="true"/>

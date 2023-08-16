@@ -6,13 +6,14 @@
         #endif
 /* Number of interrupts allocated */
 #ifndef VECTOR_DATA_IRQ_COUNT
-#define VECTOR_DATA_IRQ_COUNT    (4)
+#define VECTOR_DATA_IRQ_COUNT    (5)
 #endif
 /* ISR prototypes */
 void sci_uart_rxi_isr(void);
 void sci_uart_txi_isr(void);
 void sci_uart_tei_isr(void);
 void sci_uart_eri_isr(void);
+void glcdc_line_detect_isr(void);
 
 /* Vector table allocations */
 #define VECTOR_NUMBER_SCI9_RXI ((IRQn_Type) 0) /* SCI9 RXI (Received data full) */
@@ -23,6 +24,8 @@ void sci_uart_eri_isr(void);
 #define SCI9_TEI_IRQn          ((IRQn_Type) 2) /* SCI9 TEI (Transmit end) */
 #define VECTOR_NUMBER_SCI9_ERI ((IRQn_Type) 3) /* SCI9 ERI (Receive error) */
 #define SCI9_ERI_IRQn          ((IRQn_Type) 3) /* SCI9 ERI (Receive error) */
+#define VECTOR_NUMBER_GLCDC_LINE_DETECT ((IRQn_Type) 4) /* GLCDC LINE DETECT (Specified line) */
+#define GLCDC_LINE_DETECT_IRQn          ((IRQn_Type) 4) /* GLCDC LINE DETECT (Specified line) */
 #ifdef __cplusplus
         }
         #endif

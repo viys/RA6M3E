@@ -8,6 +8,7 @@
             [1] = sci_uart_txi_isr, /* SCI9 TXI (Transmit data empty) */
             [2] = sci_uart_tei_isr, /* SCI9 TEI (Transmit end) */
             [3] = sci_uart_eri_isr, /* SCI9 ERI (Receive error) */
+            [4] = glcdc_line_detect_isr, /* GLCDC LINE DETECT (Specified line) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -15,5 +16,6 @@
             [1] = BSP_PRV_IELS_ENUM(EVENT_SCI9_TXI), /* SCI9 TXI (Transmit data empty) */
             [2] = BSP_PRV_IELS_ENUM(EVENT_SCI9_TEI), /* SCI9 TEI (Transmit end) */
             [3] = BSP_PRV_IELS_ENUM(EVENT_SCI9_ERI), /* SCI9 ERI (Receive error) */
+            [4] = BSP_PRV_IELS_ENUM(EVENT_GLCDC_LINE_DETECT), /* GLCDC LINE DETECT (Specified line) */
         };
         #endif

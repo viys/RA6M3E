@@ -11,6 +11,17 @@ int _write(int fd, char *pBuffer, int size)
     return size;
 }
 
+void my_drawHline(uint16_t x, uint16_t y, uint16_t len){
+    uint16_t* buffer = (uint16_t*)fb_background;
+    for(uint16_t i=0; i<len; i++){
+        if(i+x < 480){
+            buffer[y*480 + x + i] = 0xe007;
+        }else {
+            break;
+        }
+    }
+}
+
 void my_uart_irq(uart_callback_args_t *p_args)
 {
     if(p_args->event == UART_EVENT_TX_COMPLETE){
@@ -29,11 +40,19 @@ FSP_CPP_FOOTER
 void hal_entry(void)
 {
     /* TODO: add your own code here */
-    uint8_t c = 't';
     uint8_t a = 0;
 
     R_SCI_UART_Open(&g_uart9_ctrl, &g_uart9_cfg);
 
+    R_GPT_Open(&g_timer5_ctrl, &g_timer5_cfg);
+    R_GPT_Start(&g_timer5_ctrl);
+
+    R_GLCDC_Open(&g_display0_ctrl, &g_display0_cfg);
+    R_GLCDC_Start(&g_display0_ctrl);
+
+    uint16_t* u16buff = (uint16_t*)fb_background;
+
+    my_drawHline(100,50,50);
 
     while(1){
         R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_02_PIN_09, 1);
@@ -49,9 +68,19 @@ void hal_entry(void)
         R_BSP_PinWrite(BSP_IO_PORT_02_PIN_10, 0);
         R_BSP_PinAccessDisable();
         R_BSP_SoftwareDelay(500, BSP_DELAY_UNITS_MILLISECONDS);
+        R_GPT_DutyCycleSet(&g_timer5_ctrl, (a & 0x01)?60000:120000, GPT_IO_PIN_GTIOCB);
 
-//        R_SCI_UART_Write(&g_uart9_ctrl, &c, 1);
+        for(int i=0; i<480*272; i++){
+            u16buff[i] = 0xf800;
+        }
+        R_BSP_SoftwareDelay(500, BSP_DELAY_UNITS_MILLISECONDS);
         printf("%d\n",a++);
+        for(int i=0; i<480*272; i++){
+            u16buff[i] = 0xe007;
+        }
+//        printf("%d\n",a++);
+        R_BSP_SoftwareDelay(500, BSP_DELAY_UNITS_MILLISECONDS);
+
 
     }
 
